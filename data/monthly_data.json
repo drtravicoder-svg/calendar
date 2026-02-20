@@ -1,0 +1,183 @@
+{
+  "_meta": {
+    "file": "monthly_data.json",
+    "version": "1.0",
+    "description": "Monthly data for all 12 pages. Each entry feeds: B2-LEFT (year/masam, sunrise table, panchangam), B2-CENTER (month name), B2-RIGHT (gulika kalam), B3 (day grid), B4 (footer). This is the ONLY file that changes per month.",
+    "usage": "One entry per month. The renderer loops over months[0..11] and generates one page each."
+  },
+
+  "months": [
+    {
+      "month_number": 1,
+      "month_telugu": "జనవరి",
+      "month_english": "JANUARY",
+
+      "b2_left": {
+        "year_masam_line1": "శ్రీవిశ్వావసు నామ సంవర మార్గశిర శు. ద్వితీయ",
+        "year_masam_line2": "లగ్నం పుష్యమాసం శు. ద్వాదశి పర్యంతం",
+        "panchangam_text": "మార్గశిర మాసం\nపుష్య మాసం"
+      },
+
+      "sunrise_sunset": {
+        "sample_dates": [1, 11, 21, 30],
+        "sunrise":      ["6-49", "6-51", "6-52", "6-54"],
+        "sunset":       ["5-49", "5-51", "5-56", "5-49"]
+      },
+
+      "gulika_kalam": [
+        { "weekday": "ఆదివారము", "start": "మ.3-00",  "marker": "ల", "end": "4-30" },
+        { "weekday": "సోమవారము", "start": "ల.1-30",  "marker": "ల", "end": "3-00" },
+        { "weekday": "మంగళవారము", "start": "మ.12-00", "marker": "ల", "end": "1-30" },
+        { "weekday": "బుధవారము", "start": "ల.10-30", "marker": "ల", "end": "12-00" },
+        { "weekday": "గురువారము", "start": "ల.9-00",  "marker": "ల", "end": "10-30" },
+        { "weekday": "శుక్రవారము", "start": "ల.7-30",  "marker": "ల", "end": "9-00" },
+        { "weekday": "శనివారము", "start": "ల.6-00",  "marker": "ల", "end": "7-30" }
+      ],
+
+      "festivals": [
+        { "day": 1,  "name": "నూతన సంవత్సర దినోత్సవం", "type": "general" },
+        { "day": 14, "name": "భోగి పండుగ", "type": "major_festival" },
+        { "day": 15, "name": "మకర సంక్రాంతి", "type": "major_festival" },
+        { "day": 26, "name": "గణతంత్ర దినోత్సవం", "type": "national_holiday" }
+      ],
+
+      "footer_text": "మకర సంక్రాంతి శుభాకాంక్షలు",
+
+      "days": [
+        {
+          "date": 1,
+          "day_of_week": "WED",
+          "tithi": "శు.చతుర్ధి",
+          "nakshatram": "ధనిష్ఠ",
+          "sunrise": "6-49",
+          "rahu_kalam": "మ.12-00 ల 1-30",
+          "varjyam": "లేదు",
+          "is_holiday": false,
+          "is_second_saturday": false,
+          "special_markers": []
+        }
+      ],
+
+      "_days_note": "TRUNCATED — full month has 28-31 day entries with the same structure as days[0]"
+    },
+
+    {
+      "month_number": 9,
+      "month_telugu": "సెప్టెంబర్",
+      "month_english": "SEPTEMBER",
+
+      "b2_left": {
+        "year_masam_line1": "శ్రీవిశ్వావసు నామ సంవర భాద్రపద శు. నవమి",
+        "year_masam_line2": "లగ్న ఆశ్వీయుజ శు. అష్టమి పర్యంతం"
+      },
+
+      "sunrise_sunset": {
+        "sample_dates": [1, 11, 21, 30],
+        "sunrise":      ["5-49", "5-51", "5-52", "5-54"],
+        "sunset":       ["6-12", "6-05", "5-56", "5-49"]
+      },
+
+      "gulika_kalam": [
+        { "weekday": "ఆదివారము", "start": "మ.3-00",  "marker": "ల", "end": "4-30" },
+        { "weekday": "సోమవారము", "start": "ల.1-30",  "marker": "ల", "end": "3-00" },
+        { "weekday": "మంగళవారము", "start": "మ.12-00", "marker": "ల", "end": "1-30" },
+        { "weekday": "బుధవారము", "start": "ల.10-30", "marker": "ల", "end": "12-00" },
+        { "weekday": "గురువారము", "start": "ల.9-00",  "marker": "ల", "end": "10-30" },
+        { "weekday": "శుక్రవారము", "start": "ల.7-30",  "marker": "ల", "end": "9-00" },
+        { "weekday": "శనివారము", "start": "ల.6-00",  "marker": "ల", "end": "7-30" }
+      ],
+
+      "festivals": [
+        { "day": 3,  "name": "కేదారేశ్వరతం", "type": "general" },
+        { "day": 3,  "name": "మహాత్రయోదశి", "type": "general" },
+        { "day": 5,  "name": "ఉపాధ్యాయ దినోత్సవం", "type": "general" },
+        { "day": 6,  "name": "అనంత ప్రదక్షణ", "type": "general" },
+        { "day": 7,  "name": "చంద్రగ్రహణం", "type": "general" },
+        { "day": 8,  "name": "వినాయకచతుర్థి (శ్రీ)", "type": "major_festival" },
+        { "day": 9,  "name": "ఋషి పంచమి", "type": "general" },
+        { "day": 10, "name": "ఉండ్రాళ్ళ తద్ది", "type": "general" },
+        { "day": 14, "name": "ఉత్తర కార్తె", "type": "general" },
+        { "day": 15, "name": "మన్వాది కైశిక శ్రీకృష్ణ జయంతి", "type": "major_festival" },
+        { "day": 17, "name": "మహాలయారంభం", "type": "general" },
+        { "day": 17, "name": "జనాష్టమి ఆచరణ, సె.5.12", "type": "major_festival" },
+        { "day": 19, "name": "కిలియమావళి", "type": "general" },
+        { "day": 20, "name": "బొల్లూరమ్మ తద్దినము/తాళాపల్లి", "type": "general" },
+        { "day": 21, "name": "పొలమాసక్స్ చతురపత్నము", "type": "general" },
+        { "day": 22, "name": "కారిడార్పట్ల", "type": "general" },
+        { "day": 24, "name": "కీరుమల ఐట్రాచి", "type": "general" },
+        { "day": 27, "name": "మాత్సె కార్తె", "type": "general" },
+        { "day": 27, "name": "శ్రీరాధ ప్రదక్షణ, మత్సతర్", "type": "general" },
+        { "day": 30, "name": "పెద్దమ్మ", "type": "general" }
+      ],
+
+      "footer_text": "5-ఉపాధ్యాయ దినోత్సవ శుభాకాంక్షలు",
+
+      "days": [
+        {
+          "date": 1,
+          "day_of_week": "MON",
+          "tithi": "భాద్రపద",
+          "nakshatram": "శతభిష",
+          "sunrise": "5-49",
+          "rahu_kalam": "మ.12-21ల 1-10",
+          "varjyam": "లేదు",
+          "is_holiday": false,
+          "is_second_saturday": false,
+          "special_markers": []
+        },
+        {
+          "date": 7,
+          "day_of_week": "SUN",
+          "tithi": "శు.నవ",
+          "nakshatram": "ఉ.ఫా",
+          "sunrise": "రా.1.57",
+          "rahu_kalam": "సా.0.59 తే.5.02",
+          "varjyam": "",
+          "is_holiday": true,
+          "is_second_saturday": false,
+          "special_markers": ["పూర్ణ"]
+        }
+      ],
+
+      "_days_note": "TRUNCATED — full September has 30 day entries"
+    }
+  ],
+
+  "_structure_notes": {
+    "months_array": "Index 0 = January (month_number=1), Index 11 = December (month_number=12). Fill all 12.",
+
+    "b2_left_fields": {
+      "year_masam_line1": "Telugu samvatsara name + tithi — top line in B2-LEFT area 1",
+      "year_masam_line2": "Lagnam/masam transition info — bottom line in B2-LEFT area 1",
+      "panchangam_text": "Optional extra masam text for B2-LEFT area 2 right sub-column"
+    },
+
+    "sunrise_sunset": {
+      "sample_dates": "Array of 4 dates (typically 1, 11, 21, last-day-of-month)",
+      "sunrise": "Matching array of 4 sunrise times in H-MM format",
+      "sunset": "Matching array of 4 sunset times in H-MM format"
+    },
+
+    "gulika_kalam": {
+      "_format": "Array of 7 objects, one per weekday (ఆదివారం first, శనివారం last)",
+      "start": "Start time with prefix (మ. = morning, ల. = afternoon/evening)",
+      "marker": "Usually 'ల' (a connecting marker between times)",
+      "end": "End time"
+    },
+
+    "festivals": {
+      "type_values": ["general", "major_festival", "national_holiday"],
+      "major_festival": "Highlighted in red/bold in the festival panel",
+      "national_holiday": "May have flag symbol"
+    },
+
+    "days": {
+      "day_of_week": "SUN|MON|TUE|WED|THU|FRI|SAT — determines which row in the grid",
+      "is_holiday": "true for Sundays and festival days — renders in RED",
+      "is_second_saturday": "true for 2nd Saturday — special formatting",
+      "special_markers": "Array of strings like 'పూర్ణ' (full moon), 'అమా' (new moon), etc."
+    },
+
+    "footer_text": "Monthly special occasion greeting shown in yellow footer bar (B4)"
+  }
+}

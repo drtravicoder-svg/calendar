@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "file": "company_data.json",
+    "version": "1.0",
+    "description": "Company + annual data — SAME on all 12 pages. Change this to produce a calendar for a different company or year. Used by: Header (H3, H5, H8), B1 credit bar, B2 year display, watermarks.",
+    "usage": "Edit values below. Keep keys unchanged. Renderer reads these to fill the design_template."
+  },
+
+  "year": 2025,
+
+  "company": {
+    "name_telugu": "వేంకటరామ అండ్ కో.",
+    "name_english": "Venkatrama & Co.",
+    "logo_file": "assets/v_logo.png",
+    "badge_file": "assets/jrrc_badge.png",
+    "decorative_symbol": "శ్రీ",
+    "website": "https://venkatramacalendar.com",
+    "app_url": "venkatramacalendar.com/app"
+  },
+
+  "contact": {
+    "tagline": "ఎడ్యుకేషనల్ పబ్లిషర్స్, బుక్ సెల్లర్స్ - ఏలూరు - 2",
+    "phone": "08812-230098",
+    "cell": "9491174515",
+    "email": "venkatramacoweb@gmail.com",
+    "supplementary_text": ""
+  },
+
+  "branches": ["హైదరాబాద్", "విజయవాడ", "తాడేపల్లిగూడెం"],
+
+  "credits": {
+    "panchangam": "పంచాంగకర్తలు: క్రీ.శే|| బ్రహ్మశ్రీ తంగిరాల పూర్ణయ్య సిద్ధాంతి గారి",
+    "publisher": "పట్టాభిరామయ్య మరియు రామనాథ సిద్ధాంతి, రేలంగి",
+    "b1_full_text": "పంచాంగకర్తలు : క్రీ.శే|| బ్రహ్మశ్రీ తంగిరాల పూర్ణయ్య సిద్ధాంతి గారి పాత్రలు పట్టాభిరామయ్య మరియు రామనాథ సిద్ధాంతి, రేలంగి"
+  },
+
+  "promo": {
+    "app_text_telugu": "మా క్యాలెండర్ యాప్ డౌన్‌లోడ్ చేయండి",
+    "app_url_display": "@ venkatramacalendar.com/app"
+  },
+
+  "watermark_text": "venkatramacalendar.com",
+
+  "copyright_line": "© {year} {company.name_english}, Official Permission Website - {company.website}",
+
+  "_rendering_notes": {
+    "header_zones_using_this_data": ["H3 (copyright)", "H5 (all branding)", "H8 (credits)", "B1 (credit bar)"],
+    "b2_center_year": "The '2025' in B2-CENTER reads company_data.year",
+    "watermarks": "Rendered as last overlay layer on all pages",
+    "logo_badge": "Must be RGBA PNG files with transparency. Logo ~117×98px, Badge ~225×88px."
+  }
+}

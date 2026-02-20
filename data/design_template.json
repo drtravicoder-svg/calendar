@@ -1,0 +1,417 @@
+{
+  "_meta": {
+    "file": "design_template.json",
+    "version": "1.0",
+    "description": "STATIC design template â€” borders, gradients, spacing, layout rules. NEVER changes between pages or years. This is the 'skeleton' that gets filled with data.",
+    "source": "Pixel analysis of VenkatramaCoTeluguCalendarColour202509.png (924Ã—1316px)"
+  },
+
+  "page": {
+    "width_px": 924,
+    "height_px": 1316,
+    "dpi": 103,
+    "content_area": { "x_start": 42, "x_end": 882, "width": 841 },
+    "left_border_width": 42,
+    "right_border_width": 41
+  },
+
+  "header": {
+    "_comment": "Y=0â†’345 (346px). SAME all 12 pages â€” rendered once from company_data.",
+    "total_height": 346,
+
+    "H1_yellow_top_border": {
+      "y": [0, 15],
+      "height": 16,
+      "type": "solid_fill",
+      "color_key": "border_yellow"
+    },
+
+    "H2_gradient_top_border": {
+      "y": [16, 19],
+      "height": 4,
+      "type": "vertical_gradient",
+      "content_x": [101, 821],
+      "side_fill_key": "border_yellow",
+      "stops": [
+        { "y": 16, "color": "#FBDD12" },
+        { "y": 17, "color": "#C88700" },
+        { "y": 18, "color": "#BC4500" },
+        { "y": 19, "color": "#F78457" }
+      ]
+    },
+
+    "H3_copyright_bar": {
+      "y": [20, 48],
+      "height": 29,
+      "background_key": "white_background",
+      "frame": {
+        "left_x": 102,
+        "right_x": 819,
+        "border_width": 2,
+        "bevel_style": "expanding_bottom",
+        "border_color": "#B44100",
+        "inner_glow_left": "#C85A2D",
+        "inner_glow_right": "#B13737",
+        "bottom_bevel_y": [43, 46],
+        "bottom_line_y": [47, 48],
+        "bottom_line_color": "#D24448"
+      },
+      "text": {
+        "y": [27, 38],
+        "x": [115, 810],
+        "font_size_pt": 8,
+        "font_color_key": "copyright_text",
+        "alignment": "center",
+        "template": "Â© {year} {company_name_en}, Official Permission Website - {website}"
+      }
+    },
+
+    "H5_branding_area": {
+      "y": [49, 284],
+      "height": 236,
+      "background_key": "cream_background",
+
+      "layout": {
+        "logo_zone": { "x": [42, 200], "y": [50, 160] },
+        "center_zone": { "x": [200, 690], "y": [49, 284] },
+        "badge_zone": { "x": [690, 882], "y": [50, 160] }
+      },
+
+      "elements": {
+        "logo": {
+          "position": { "x": 53, "y": 50 },
+          "max_size": { "w": 117, "h": 98 },
+          "type": "image"
+        },
+        "badge": {
+          "position": { "x": 650, "y": 57 },
+          "max_size": { "w": 225, "h": 88 },
+          "type": "image"
+        },
+        "decorative_symbol": {
+          "position": { "x": 625, "y": 63 },
+          "size": { "w": 40, "h": 7 },
+          "color_key": "primary_red"
+        },
+        "company_name": {
+          "y": [71, 129],
+          "safe_x": [200, 750],
+          "font_size_pt": 41,
+          "font_style": "bold_decorative_telugu",
+          "font_color_key": "primary_red",
+          "has_shadow": true,
+          "alignment": "center",
+          "overflow": "scale_down_min_35pt"
+        },
+        "decorative_triangle": {
+          "y": [142, 157],
+          "x_center": 330,
+          "top_width": 57,
+          "bottom_width": 8,
+          "shape": "inverted_triangle",
+          "color_top_key": "primary_red",
+          "color_tip": "#434946"
+        },
+        "contact_info": {
+          "y": [167, 203],
+          "safe_x": [140, 738],
+          "font_color_key": "text_purple_magenta",
+          "alignment": "center",
+          "sub_lines": {
+            "tagline":    { "y": [167, 176], "font_size_pt": 7, "font_style": "regular" },
+            "main_line":  { "y": [177, 194], "font_size_pt": 12, "font_style": "bold", "overflow": "wrap_at_comma" },
+            "supplement":  { "y": [195, 203], "font_size_pt": 6, "font_style": "regular" }
+          }
+        },
+        "branches": {
+          "y": [222, 235],
+          "safe_x": [104, 748],
+          "font_size_pt": 9,
+          "font_color_key": "branch_text",
+          "font_style": "bold",
+          "alignment": "center",
+          "overflow": "truncate_with_ellipsis"
+        },
+        "app_promo": {
+          "y": [248, 271],
+          "safe_x": [190, 736],
+          "font_size_pt": 13,
+          "font_color_key": "text_green",
+          "font_style": "bold",
+          "alignment": "center"
+        },
+        "app_url": {
+          "y": [273, 280],
+          "safe_x": [242, 662],
+          "font_size_pt": 6,
+          "font_color_key": "app_url_green",
+          "font_style": "regular",
+          "alignment": "center"
+        }
+      },
+
+      "spacing": {
+        "top_to_first_content": 9,
+        "logo_name_bottom_to_triangle": 8,
+        "triangle_bottom_to_contact": 10,
+        "contact_bottom_to_branches": 19,
+        "branches_bottom_to_app_promo": 13,
+        "app_promo_to_url": 2,
+        "url_to_h6": 5
+      }
+    },
+
+    "H6_warm_separator": {
+      "y": [285, 286],
+      "height": 2,
+      "type": "solid_line",
+      "color_key": "warm_separator"
+    },
+
+    "H7_red_bar_1": {
+      "y": [287, 296],
+      "height": 10,
+      "type": "solid_fill",
+      "color_key": "bar_red"
+    },
+
+    "H8_embossed_text_bar": {
+      "y": [297, 312],
+      "height": 16,
+      "background_key": "bar_red",
+      "effect": "3d_emboss",
+      "shadow_color": "#B43200",
+      "highlight_color": "#FFFFFF",
+      "shadow_offset": { "x": 1, "y": 1 },
+      "left_section": {
+        "x": [100, 490],
+        "text_color": "#FFF5EB",
+        "alignment": "left"
+      },
+      "right_section": {
+        "x": [500, 840],
+        "text_color": "#FFE12D",
+        "alignment": "right"
+      }
+    },
+
+    "H9_red_bar_2": {
+      "y": [313, 323],
+      "height": 11,
+      "type": "solid_fill",
+      "color_key": "bar_red"
+    },
+
+    "H10_yellow_gradient_strip": {
+      "y": [324, 331],
+      "height": 8,
+      "type": "vertical_gradient",
+      "stops": [
+        { "y": 324, "color": "#FF9D38" },
+        { "y": 325, "color": "#FFDF3C" },
+        { "y": 326, "color": "#FFF015" },
+        { "y": 327, "color": "#F8F600" },
+        { "y": 328, "color": "#FCF800" },
+        { "y": 329, "color": "#FEFA00" },
+        { "y": 330, "color": "#FBF305" },
+        { "y": 331, "color": "#FFE91B" }
+      ]
+    },
+
+    "H11_bottom_border": {
+      "y": [332, 339],
+      "height": 8,
+      "type": "vertical_gradient",
+      "stops": [
+        { "y": 332, "color": "#EA8F00" },
+        { "y": 333, "color": "#BF3100" },
+        { "y": 334, "color": "#DF230B" },
+        { "y": 335, "color": "#EE181F" },
+        { "y": 336, "color": "#F3181A" },
+        { "y": 337, "color": "#F1161B" },
+        { "y": 338, "color": "#E3101F" },
+        { "y": 339, "color": "#ED4B58" }
+      ]
+    },
+
+    "H12_transition": {
+      "y": [340, 345],
+      "height": 6,
+      "type": "vertical_gradient",
+      "stops": [
+        { "y": 340, "color": "#FED4D3" },
+        { "y": 342, "color": "#FEF8FB" },
+        { "y": 345, "color": "#F9F9FA" }
+      ]
+    },
+
+    "side_borders": {
+      "left": { "x": [0, 41], "color_key": "border_yellow" },
+      "right": { "x": [883, 923], "color_key": "border_yellow" }
+    },
+
+    "watermarks": {
+      "left": { "x": [43, 51], "color_key": "primary_red", "orientation": "vertical_90" },
+      "right": { "x": [876, 880], "color_key": "primary_red", "orientation": "vertical_90" },
+      "render_layer": "top_overlay"
+    }
+  },
+
+  "B1_credit_bar": {
+    "_comment": "Full-width panchangam credit box. SAME all 12 pages.",
+    "y": [346, 374],
+    "height": 29,
+    "top_border": { "y": 348, "color": "#718274" },
+    "background": "#D2E6D7",
+    "green_padding_top": { "y": [349, 354] },
+    "text": {
+      "y": [355, 364],
+      "x": [60, 870],
+      "font_size_pt": 7,
+      "font_color": "#A84B80",
+      "alignment": "center",
+      "template": "{panchangam_credit} à°ªà°¾à°¤à±à°°à°²à± {publisher_credit}"
+    },
+    "green_padding_bottom": { "y": [365, 374] }
+  },
+
+  "B2_subheader": {
+    "_comment": "Three-column info panel. Structural frame is STATIC. Content changes MONTHLY.",
+    "y": [375, 498],
+    "height": 124,
+
+    "frame": {
+      "top_green_border": { "y": [349, 374], "color": "#C8E6D2", "_note": "Shared with B1 bottom padding" },
+      "top_dark_line": { "y": [378, 379], "color": "#282D26" },
+      "bottom_dark_line": { "y": [496, 498], "color": "#3C3C3C" },
+      "right_green_border": { "x": [863, 866], "color": "#C8E6D2" }
+    },
+
+    "columns": {
+      "left":   { "x": [42, 308], "width": 267 },
+      "divider_1": { "x": [309, 312], "width": 4, "color": "#1E1E19" },
+      "center": { "x": [313, 613], "width": 301 },
+      "divider_2": { "x": [614, 615], "width": 2, "color": "#320D2E" },
+      "right":  { "x": [616, 866], "width": 251 }
+    },
+
+    "left_panel": {
+      "background": "#F8B9A0",
+      "area1_year_masam": {
+        "y": [384, 413],
+        "x": [55, 303],
+        "font_size_pt": 7,
+        "font_color": "#50281E",
+        "alignment": "left",
+        "lines": 2,
+        "line1_y": [384, 392],
+        "line2_y": [400, 413]
+      },
+      "divider_line": { "y": [419, 422], "color": "#5F3E34" },
+      "area2_table": {
+        "header_label": "à°¸à±‚.à°¦à°¿.  à°…à°¸à±à°¤",
+        "header_y": [425, 433],
+        "left_sub_x": [55, 165],
+        "right_sub_x": [175, 303],
+        "font_size_pt": 5,
+        "font_color_left": "#554B53",
+        "font_color_right": "#5A5058",
+        "row_text_height": 8,
+        "row_pitch": 16,
+        "row_y_positions": [440, 455, 471, 487],
+        "num_rows": 4
+      }
+    },
+
+    "center_panel": {
+      "background": "#720F62",
+      "year_text": {
+        "y": [402, 468],
+        "x": [325, 446],
+        "font_size_pt": 46,
+        "font_color": "#FAF6FA",
+        "font_style": "bold",
+        "alignment": "right_in_left_half"
+      },
+      "month_telugu": {
+        "y": [384, 427],
+        "x": [463, 608],
+        "font_size_pt": 30,
+        "font_color": "#FAE928",
+        "font_style": "bold_decorative_telugu",
+        "has_shadow": true,
+        "alignment": "left_in_right_half"
+      },
+      "decorative_dots": {
+        "y": [430, 447],
+        "x": [502, 522],
+        "color": "#FAE928",
+        "type": "decorative"
+      },
+      "month_english": {
+        "y": [452, 477],
+        "x": [473, 605],
+        "font_size_pt": 18,
+        "font_color": "#FAEBFA",
+        "font_style": "bold_uppercase",
+        "alignment": "center_in_right_half"
+      }
+    },
+
+    "right_panel": {
+      "background": "#D2E6C8",
+      "title_box": {
+        "y": [380, 395],
+        "background": "#D2F0D2",
+        "text": "à°—à±à°²à°¿à°• à°•à°¾à°²à°‚ :",
+        "text_y": [381, 391],
+        "text_x": [705, 783],
+        "font_size_pt": 7,
+        "font_color": "#BE5050",
+        "font_style": "bold",
+        "alignment": "center"
+      },
+      "table": {
+        "content_x": [622, 833],
+        "font_size_pt": 6,
+        "font_color": "#506955",
+        "row_pitch": 15,
+        "row_y_starts": [396, 411, 426, 441, 456, 464, 487],
+        "columns": {
+          "weekday_name": { "x": [622, 700] },
+          "start_time":   { "x": [705, 770] },
+          "marker":       { "x": [770, 790] },
+          "end_time":     { "x": [800, 833] }
+        },
+        "internal_green_borders": [
+          { "x": [783, 798] },
+          { "x": [833, 847] }
+        ]
+      }
+    }
+  },
+
+  "colors": {
+    "_comment": "Master color palette referenced by _key fields above. Override these to re-skin.",
+    "border_yellow": "#FDF800",
+    "primary_red": "#E61C21",
+    "bar_red": "#EF171F",
+    "cream_background": "#FDFED6",
+    "white_background": "#FAFAFA",
+    "text_purple_magenta": "#5A2346",
+    "branch_text": "#582244",
+    "text_green": "#218847",
+    "app_url_green": "#378C50",
+    "copyright_text": "#6E3755",
+    "frame_border": "#B44100",
+    "warm_separator": "#DEAD8C"
+  },
+
+  "alignment_rules": {
+    "center_anchor_x": 462,
+    "auto_fit_algorithm": "1. Render at default size â†’ 2. If overflow, reduce by 1pt â†’ 3. Repeat to min â†’ 4. Truncate '...'",
+    "min_gap_logo_text": 10,
+    "min_gap_badge_text": 10,
+    "text_must_stay_within_content_area": true
+  }
+}
