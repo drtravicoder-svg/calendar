@@ -4,6 +4,7 @@
  */
 
 import { renderHeader } from './header-renderer.js';
+import { renderSubHeader } from './subheader-renderer.js';
 
 // Data objects (loaded from JSON files)
 let designTemplate = null;
@@ -91,13 +92,15 @@ function renderCalendar(monthIndex) {
     const contentArea = document.getElementById('content-area');
     contentArea.innerHTML = '';
 
-    // Render Header (H1-H6) - Task 2
+    // Render Header (H1-H12) - Tasks 2-3
     const header = renderHeader(designTemplate, companyData);
     contentArea.appendChild(header);
 
+    // Render Sub-Header (B1 + B2) - Tasks 4-7
+    const subheader = renderSubHeader(designTemplate, companyData, monthData);
+    contentArea.appendChild(subheader);
+
     // TODO: Remaining zones
-    // Task 3: renderHeaderH7toH12(designTemplate, companyData);
-    // Task 4-7: renderSubHeader(designTemplate, monthData);
     // Task 8-10: renderGrid(designTemplate, monthData);
     // Task 11: renderFooter(designTemplate, monthData);
     // Task 12: renderWatermarks(companyData);
