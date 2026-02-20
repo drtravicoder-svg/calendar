@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkatrama Telugu Calendar 2025</title>
+
+    <!-- Google Fonts - Noto Sans Telugu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/calendar.css">
+</head>
+<body>
+    <!-- Control Panel (outside calendar) -->
+    <div id="controls">
+        <h1>Venkatrama Telugu Calendar — Renderer</h1>
+        <div class="control-group">
+            <label for="month-selector">Month:</label>
+            <select id="month-selector">
+                <option value="0">January</option>
+                <option value="1">February</option>
+                <option value="2">March</option>
+                <option value="3">April</option>
+                <option value="4">May</option>
+                <option value="5">June</option>
+                <option value="6">July</option>
+                <option value="7">August</option>
+                <option value="8" selected>September</option>
+                <option value="9">October</option>
+                <option value="10">November</option>
+                <option value="11">December</option>
+            </select>
+            <button id="export-btn">Export PNG</button>
+        </div>
+        <div id="status">Loading data...</div>
+    </div>
+
+    <!-- Calendar Page Canvas (924×1316px) -->
+    <div id="calendar-container">
+        <div id="calendar-page">
+            <!-- Left border (yellow) -->
+            <div class="side-border side-border-left"></div>
+
+            <!-- Right border (yellow) -->
+            <div class="side-border side-border-right"></div>
+
+            <!-- Content area (will be populated by renderer) -->
+            <div id="content-area">
+                <!-- Header zones H1-H12 will go here -->
+                <!-- Body zones B1-B5 will go here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js" type="module"></script>
+</body>
+</html>
