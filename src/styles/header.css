@@ -260,3 +260,111 @@
     height: 2px;
     background: #DEAD8C;
 }
+
+/* ===== H7: RED BAR 1 ===== */
+.zone-h7 {
+    position: absolute;
+    left: 0;
+    top: 287px;
+    width: 924px;
+    height: 10px;
+    background: #EF171F;
+}
+
+/* ===== H8: EMBOSSED TEXT BAR ===== */
+.zone-h8 {
+    position: absolute;
+    left: 0;
+    top: 297px;
+    width: 924px;
+    height: 16px;
+    background: #EF171F;
+}
+
+.h8-left-text {
+    position: absolute;
+    left: 100px;
+    top: 2px;
+    width: 390px;
+    font-size: 6pt;
+    color: #FFF5EB;
+    text-align: left;
+    text-shadow:
+        -1px -1px 0 rgba(255, 255, 255, 0.3),
+        1px 1px 0 #B43200;
+}
+
+.h8-right-text {
+    position: absolute;
+    left: 500px;
+    top: 2px;
+    width: 340px;
+    font-size: 6pt;
+    color: #FFE12D;
+    text-align: right;
+    text-shadow:
+        -1px -1px 0 rgba(255, 255, 255, 0.3),
+        1px 1px 0 #B43200;
+}
+
+/* ===== H9: RED BAR 2 ===== */
+.zone-h9 {
+    position: absolute;
+    left: 0;
+    top: 313px;
+    width: 924px;
+    height: 11px;
+    background: #EF171F;
+}
+
+/* ===== H10: YELLOW GRADIENT STRIP ===== */
+.zone-h10 {
+    position: absolute;
+    left: 0;
+    top: 324px;
+    width: 924px;
+    height: 8px;
+    background: linear-gradient(to bottom,
+        #FF9D38 0%,
+        #FFA825 12.5%,
+        #FFB612 25%,
+        #FFC400 37.5%,
+        #FFD300 50%,
+        #FFE100 62.5%,
+        #FFF015 75%,
+        #FFE91B 100%
+    );
+}
+
+/* ===== H11: ORANGE→RED BOTTOM BORDER ===== */
+.zone-h11 {
+    position: absolute;
+    left: 0;
+    top: 332px;
+    width: 924px;
+    height: 8px;
+    background: linear-gradient(to bottom,
+        #EA8F00 0%,
+        #EB7500 12.5%,
+        #EC5A00 25%,
+        #ED4000 37.5%,
+        #EE181F 50%,
+        #EE2630 62.5%,
+        #EE3A46 75%,
+        #ED4B58 100%
+    );
+}
+
+/* ===== H12: CREAM/WHITE TRANSITION ===== */
+.zone-h12 {
+    position: absolute;
+    left: 0;
+    top: 340px;
+    width: 924px;
+    height: 6px;
+    background: linear-gradient(to bottom,
+        #FED4D3 0%,
+        #FEF8FB 50%,
+        #F9F9FA 100%
+    );
+}

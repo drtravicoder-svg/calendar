@@ -4,7 +4,7 @@
  */
 
 /**
- * Render the complete header (H1-H6)
+ * Render the complete header (H1-H12)
  * @param {Object} design - design_template.json
  * @param {Object} company - company_data.json
  * @returns {HTMLElement} - header container div
@@ -33,6 +33,30 @@ export function renderHeader(design, company) {
     // H6: Warm separator line
     const h6 = createH6();
     header.appendChild(h6);
+
+    // H7: Red bar 1
+    const h7 = createH7();
+    header.appendChild(h7);
+
+    // H8: Embossed text bar
+    const h8 = createH8(company);
+    header.appendChild(h8);
+
+    // H9: Red bar 2
+    const h9 = createH9();
+    header.appendChild(h9);
+
+    // H10: Yellow gradient strip
+    const h10 = createH10();
+    header.appendChild(h10);
+
+    // H11: Orange→Red bottom border
+    const h11 = createH11();
+    header.appendChild(h11);
+
+    // H12: Cream→White transition
+    const h12 = createH12();
+    header.appendChild(h12);
 
     return header;
 }
@@ -216,4 +240,72 @@ function createH6() {
     const h6 = document.createElement('div');
     h6.className = 'zone zone-h6';
     return h6;
+}
+
+/**
+ * H7: Red bar 1 (Y: 287-296, 10px)
+ */
+function createH7() {
+    const h7 = document.createElement('div');
+    h7.className = 'zone zone-h7';
+    return h7;
+}
+
+/**
+ * H8: Embossed text bar (Y: 297-312, 16px)
+ * Contains panchangam credits (left) and publisher credits (right)
+ */
+function createH8(company) {
+    const h8 = document.createElement('div');
+    h8.className = 'zone zone-h8';
+
+    // Left text: Panchangam credits
+    const leftText = document.createElement('div');
+    leftText.className = 'h8-left-text';
+    leftText.textContent = company.credits.panchangam;
+    h8.appendChild(leftText);
+
+    // Right text: Publisher credits
+    const rightText = document.createElement('div');
+    rightText.className = 'h8-right-text';
+    rightText.textContent = company.credits.publisher;
+    h8.appendChild(rightText);
+
+    return h8;
+}
+
+/**
+ * H9: Red bar 2 (Y: 313-323, 11px)
+ */
+function createH9() {
+    const h9 = document.createElement('div');
+    h9.className = 'zone zone-h9';
+    return h9;
+}
+
+/**
+ * H10: Yellow gradient strip (Y: 324-331, 8px)
+ */
+function createH10() {
+    const h10 = document.createElement('div');
+    h10.className = 'zone zone-h10';
+    return h10;
+}
+
+/**
+ * H11: Orange→Red bottom border (Y: 332-339, 8px)
+ */
+function createH11() {
+    const h11 = document.createElement('div');
+    h11.className = 'zone zone-h11';
+    return h11;
+}
+
+/**
+ * H12: Cream→White transition (Y: 340-345, 6px)
+ */
+function createH12() {
+    const h12 = document.createElement('div');
+    h12.className = 'zone zone-h12';
+    return h12;
 }
