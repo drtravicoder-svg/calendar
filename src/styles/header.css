@@ -1,0 +1,262 @@
+/* Header Zones H1-H12 (Y: 0-345) */
+
+/* ===== H1: YELLOW TOP BORDER ===== */
+.zone-h1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 924px;
+    height: 16px;
+    background: #FDF800;
+}
+
+/* ===== H2: ORANGE→RED GRADIENT TOP BORDER ===== */
+.zone-h2 {
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 924px;
+    height: 4px;
+}
+
+.zone-h2-sides {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 924px;
+    height: 4px;
+    background: #FDF800;
+}
+
+.zone-h2-gradient {
+    position: absolute;
+    left: 101px;
+    top: 0;
+    width: 720px;
+    height: 4px;
+    background: linear-gradient(to bottom,
+        #FBDD12 0%,
+        #C88700 33%,
+        #BC4500 67%,
+        #F78457 100%
+    );
+}
+
+/* ===== H3: COPYRIGHT BAR WITH BEVELED FRAME ===== */
+.zone-h3 {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 924px;
+    height: 29px;
+    background: #FAFAFA;
+}
+
+.h3-frame-left {
+    position: absolute;
+    left: 102px;
+    top: 0;
+    width: 2px;
+    height: 23px;
+    background: linear-gradient(to right,
+        #B44100 0%,
+        #C85A2D 50%
+    );
+}
+
+.h3-frame-right {
+    position: absolute;
+    left: 818px;
+    top: 0;
+    width: 2px;
+    height: 23px;
+    background: linear-gradient(to right,
+        #B13737 0%,
+        #C33714 50%
+    );
+}
+
+.h3-text {
+    position: absolute;
+    left: 115px;
+    top: 7px;
+    width: 695px;
+    height: 12px;
+    font-size: 8pt;
+    line-height: 12px;
+    color: #6E3755;
+    text-align: center;
+}
+
+.h3-bevel-bottom {
+    position: absolute;
+    left: 98px;
+    top: 23px;
+    width: 728px;
+    height: 6px;
+    background: linear-gradient(to bottom,
+        rgba(180, 65, 0, 0.5) 0%,
+        rgba(195, 55, 20, 0.7) 50%,
+        #D24448 100%
+    );
+}
+
+/* ===== H5: MAIN BRANDING AREA ===== */
+.zone-h5 {
+    position: absolute;
+    left: 0;  /* within content-area which starts at X=42 */
+    top: 49px;
+    width: 841px;  /* content area width (42-882) */
+    height: 236px;
+    background: #FDFED6;
+}
+
+/* H5 Logo */
+.h5-logo {
+    position: absolute;
+    left: 11px;  /* page X=53, content-area starts at X=42, so 53-42=11 */
+    top: 1px;
+    max-width: 117px;
+    max-height: 98px;
+}
+
+/* H5 Badge */
+.h5-badge {
+    position: absolute;
+    left: 648px;  /* page X=690, content-area starts at X=42, so 690-42=648 */
+    top: 8px;
+    max-width: 225px;
+    max-height: 88px;
+}
+
+/* H5 Center Content */
+.h5-center {
+    position: absolute;
+    left: 158px;  /* page X=200, content-area starts at X=42, so 200-42=158 */
+    top: 0;
+    width: 490px;
+    height: 236px;
+}
+
+/* Decorative symbol శ్రీ */
+.h5-symbol {
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 100%;
+    text-align: center;
+    font-size: 5pt;
+    font-weight: 700;
+    color: #E11E23;
+}
+
+/* Company name (large Telugu) */
+.h5-company-name {
+    position: absolute;
+    left: 0;
+    top: 22px;
+    width: 100%;
+    text-align: center;
+    font-size: 41pt;
+    font-weight: 900;
+    color: #E61C21;
+    line-height: 1.4;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Decorative triangle */
+.h5-triangle {
+    position: absolute;
+    left: 50%;
+    top: 93px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #E61C21;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* Contact info */
+.h5-contact {
+    position: absolute;
+    left: 0;
+    top: 118px;
+    width: 100%;
+    text-align: center;
+}
+
+.h5-tagline {
+    font-size: 7pt;
+    color: #5A2346;
+    line-height: 1.3;
+}
+
+.h5-phone-email {
+    margin-top: 4px;
+    font-size: 12pt;
+    font-weight: 700;
+    color: #5A2346;
+    line-height: 1.4;
+}
+
+.h5-phone-email .phone {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.h5-phone-email .cell {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.h5-phone-email .email {
+    display: inline-block;
+}
+
+/* Branches */
+.h5-branches {
+    position: absolute;
+    left: 0;
+    top: 173px;
+    width: 100%;
+    text-align: center;
+    font-size: 9pt;
+    font-weight: 700;
+    color: #582244;
+    line-height: 1.3;
+}
+
+/* App promo */
+.h5-app-promo {
+    position: absolute;
+    left: 0;
+    top: 199px;
+    width: 100%;
+    text-align: center;
+}
+
+.h5-app-text {
+    font-size: 13pt;
+    font-weight: 700;
+    color: #218847;
+    line-height: 1.6;
+}
+
+.h5-app-url {
+    display: block;
+    margin-top: 2px;
+    font-size: 6pt;
+    color: #378C50;
+}
+
+/* ===== H6: WARM SEPARATOR LINE ===== */
+.zone-h6 {
+    position: absolute;
+    left: 0;
+    top: 285px;
+    width: 924px;
+    height: 2px;
+    background: #DEAD8C;
+}

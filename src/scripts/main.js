@@ -3,13 +3,15 @@
  * Loads JSON data and initializes the renderer
  */
 
+import { renderHeader } from './header-renderer.js';
+
 // Data objects (loaded from JSON files)
 let designTemplate = null;
 let companyData = null;
 let monthlyData = null;
 
-// Current selected month (default: September = index 8)
-let currentMonthIndex = 8;
+// Current selected month (default: September = index 1 in our data)
+let currentMonthIndex = 1;
 
 /**
  * Load all JSON data files
@@ -89,34 +91,16 @@ function renderCalendar(monthIndex) {
     const contentArea = document.getElementById('content-area');
     contentArea.innerHTML = '';
 
-    // TODO: Render zones
-    // Task 2: renderHeader(designTemplate, companyData);
+    // Render Header (H1-H6) - Task 2
+    const header = renderHeader(designTemplate, companyData);
+    contentArea.appendChild(header);
+
+    // TODO: Remaining zones
+    // Task 3: renderHeaderH7toH12(designTemplate, companyData);
     // Task 4-7: renderSubHeader(designTemplate, monthData);
     // Task 8-10: renderGrid(designTemplate, monthData);
     // Task 11: renderFooter(designTemplate, monthData);
     // Task 12: renderWatermarks(companyData);
-
-    // For now, just show a placeholder
-    const placeholder = document.createElement('div');
-    placeholder.style.cssText = `
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        font-size: 24px;
-        color: #666;
-    `;
-    placeholder.innerHTML = `
-        <div style="font-size: 48px; margin-bottom: 20px;">📅</div>
-        <div style="font-weight: 700; color: #E61C21;">Venkatrama Calendar</div>
-        <div style="font-size: 18px; margin-top: 10px;">${monthData.month_english} ${companyData.year}</div>
-        <div style="font-size: 14px; margin-top: 20px; color: #999;">
-            Task 1 Complete ✓<br>
-            Scaffold ready for rendering
-        </div>
-    `;
-    contentArea.appendChild(placeholder);
 }
 
 /**
