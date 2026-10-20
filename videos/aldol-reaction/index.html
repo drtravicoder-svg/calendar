@@ -1,0 +1,861 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #f7f7f7;
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #f7f7f7;
+        font-family: Inter, Helvetica, Arial, sans-serif;
+        color: #1f2937;
+      }
+      #scene {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+      }
+      svg.layer {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .txt {
+        position: absolute;
+        opacity: 0;
+        white-space: nowrap;
+      }
+      .center {
+        left: 0;
+        width: 1920px;
+        text-align: center;
+      }
+      .title {
+        top: 150px;
+        font-size: 92px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #111111;
+      }
+      .subtitle {
+        top: 272px;
+        font-size: 42px;
+        font-weight: 400;
+        color: #4b5563;
+      }
+      .header {
+        left: 80px;
+        top: 60px;
+        font-size: 46px;
+        font-weight: 600;
+        color: #111111;
+      }
+      .header span {
+        color: #6b7280;
+        font-weight: 500;
+      }
+      .caption {
+        font-size: 38px;
+        font-weight: 400;
+        color: #374151;
+      }
+      .caption b {
+        font-weight: 600;
+        color: #111111;
+      }
+      .eq {
+        font-size: 38px;
+        font-weight: 500;
+        color: #111111;
+      }
+      .eq svg {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 22px;
+      }
+      .name {
+        top: 140px;
+        font-size: 52px;
+        font-weight: 700;
+        color: #111111;
+      }
+      .sub {
+        top: 206px;
+        font-size: 32px;
+        color: #4b5563;
+      }
+      .aldol {
+        top: 640px;
+        font-size: 40px;
+        font-weight: 600;
+        color: #111111;
+      }
+      .sum {
+        left: 560px;
+        font-size: 34px;
+        color: #1f2937;
+      }
+      .sum i {
+        font-style: normal;
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        line-height: 46px;
+        border-radius: 23px;
+        background: #111111;
+        color: #ffffff;
+        text-align: center;
+        font-size: 26px;
+        font-weight: 600;
+        margin-right: 18px;
+      }
+      .tag {
+        font-size: 36px;
+        font-weight: 600;
+      }
+      .red {
+        color: #d62828;
+      }
+      .blue {
+        color: #1d4ed8;
+      }
+      sub,
+      sup {
+        font-size: 0.65em;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="85"
+      data-width="1920"
+      data-height="1080"
+    >
+      <div id="scene" class="clip" data-start="0" data-duration="85" data-track-index="0">
+        <svg id="stage" class="layer" width="1920" height="1080" viewBox="0 0 1920 1080">
+          <defs>
+            <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="7" />
+            </filter>
+            <filter id="softLine" filterUnits="userSpaceOnUse" x="-3000" y="-3000" width="8000" height="8000">
+              <feGaussianBlur stdDeviation="7" />
+            </filter>
+            <linearGradient id="ccGrad" gradientUnits="userSpaceOnUse" x1="100" y1="0" x2="0" y2="0">
+              <stop offset="0" stop-color="#1D4ED8" />
+              <stop offset="0.5" stop-color="#1D4ED8" />
+              <stop offset="0.5" stop-color="#D62828" />
+              <stop offset="1" stop-color="#D62828" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <svg id="ui" class="layer" width="1920" height="1080" viewBox="0 0 1920 1080"></svg>
+
+        <!-- Scene 1 -->
+        <div id="title" class="txt center title">The Aldol Reaction</div>
+        <div id="subtitle" class="txt center subtitle">Base-catalysed C–C bond formation</div>
+
+        <!-- Scene 2 -->
+        <div id="cap2" class="txt center caption" style="top: 880px">
+          <b>α-hydrogens are acidic (pK<sub>a</sub> ≈ 17)</b> because the resulting anion is
+          resonance-stabilised.
+        </div>
+
+        <!-- Scene 3 -->
+        <div id="h3" class="txt header"><span>Step 1:</span> Deprotonation of the α-carbon</div>
+        <div id="eq3" class="txt center eq" style="top: 940px">
+          CH<sub>3</sub>CH<sub>2</sub>CHO &nbsp;+&nbsp; <sup>−</sup>OH
+          <svg width="90" height="34" viewBox="0 0 90 34">
+            <path d="M4 12 H84 L70 3" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M86 22 H6 L20 31" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          CH<sub>3</sub>CH<sup>−</sup>CHO &nbsp;+&nbsp; H<sub>2</sub>O
+        </div>
+
+        <!-- Scene 4 -->
+        <div id="h4" class="txt header"><span>Resonance:</span> the enolate</div>
+        <div id="cap4" class="txt center caption" style="top: 820px">
+          <b>Enolate:</b> negative charge shared between α-C and O. α-C is the nucleophilic site.
+        </div>
+
+        <!-- Scene 5 -->
+        <div id="h5" class="txt header"><span>Step 2:</span> Aldol addition</div>
+        <div id="cap5" class="txt center caption" style="top: 930px">
+          <b>Alkoxide intermediate:</b> the negative charge now sits on oxygen.
+        </div>
+
+        <!-- Scene 6 -->
+        <div id="h6" class="txt header"><span>Step 3:</span> Protonation</div>
+        <div id="cap6" class="txt center caption" style="top: 872px">
+          <b>OH<sup>−</sup> regenerated → base is catalytic.</b>
+        </div>
+        <div id="eq6" class="txt center eq" style="top: 950px">
+          alkoxide &nbsp;+&nbsp; H<sub>2</sub>O
+          <svg width="90" height="34" viewBox="0 0 90 34">
+            <path d="M4 12 H84 L70 3" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M86 22 H6 L20 31" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          β-hydroxy aldehyde &nbsp;+&nbsp; <sup>−</sup>OH
+        </div>
+
+        <!-- Scene 7 -->
+        <div id="h7" class="txt header"><span>Product:</span> the aldol</div>
+        <div id="name7" class="txt center name">3-hydroxy-2-methylpentanal</div>
+        <div id="sub7" class="txt center sub">a β-hydroxy aldehyde: the “aldol”</div>
+        <div id="lblAld" class="txt tag blue" style="left: 1418px; top: 560px">aldehyde</div>
+        <div id="lblOl" class="txt tag red" style="left: 560px; top: 560px">alcohol</div>
+        <div id="aldol7" class="txt center aldol" style="top: 652px">
+          <span class="blue">ald</span>ehyde + alcoh<span class="red">ol</span> = <span class="blue">ald</span><span class="red">ol</span>
+        </div>
+        <div id="sum1" class="txt sum" style="top: 728px"><i>1</i>Base removes the α-H, forming an enolate.</div>
+        <div id="sum2" class="txt sum" style="top: 784px"><i>2</i>The enolate attacks a second carbonyl, forming a C–C bond.</div>
+        <div id="sum3" class="txt sum" style="top: 840px"><i>3</i>Protonation gives the β-hydroxy carbonyl.</div>
+        <div id="eq7" class="txt center eq" style="top: 940px">
+          2 CH<sub>3</sub>CH<sub>2</sub>CHO
+          <svg width="190" height="60" viewBox="0 0 190 60">
+            <text x="95" y="20" text-anchor="middle" font-family="Inter, Helvetica, sans-serif" font-size="22" fill="#111">OH⁻ (cat.)</text>
+            <path d="M6 42 H180 M166 33 L182 42 L166 51" fill="none" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span class="red">CH<sub>3</sub>CH<sub>2</sub>CH(OH)</span><span class="blue">CH(CH<sub>3</sub>)CHO</span>
+        </div>
+      </div>
+
+      <!-- Narration (Kokoro, af_heart) -->
+      <audio id="vo1" src="assets/audio/n1.mp3" data-start="0.3" data-duration="6.68" data-volume="1"></audio>
+      <audio id="vo2" src="assets/audio/n2.mp3" data-start="7.4" data-duration="5.16" data-volume="1"></audio>
+      <audio id="vo3" src="assets/audio/n3.mp3" data-start="17" data-duration="3.16" data-volume="1"></audio>
+      <audio id="vo4" src="assets/audio/n4.mp3" data-start="28.3" data-duration="9.51" data-volume="1"></audio>
+      <audio id="vo5" src="assets/audio/n5.mp3" data-start="38.6" data-duration="16.04" data-volume="1"></audio>
+      <audio id="vo6" src="assets/audio/n6.mp3" data-start="56" data-duration="9.11" data-volume="1"></audio>
+      <audio id="vo7" src="assets/audio/n7.mp3" data-start="69" data-duration="8.87" data-volume="1"></audio>
+
+      <!-- Background music at −20 dB -->
+      <audio id="bgm" data-timeline-role="music" src="assets/audio/music.mp3" data-start="0" data-duration="85" data-volume="0.1" data-fade-out="2"></audio>
+
+      <!-- Whoosh on each curved-arrow draw (none on resonance) -->
+      <audio id="sfxW1" src="assets/sfx/whoosh-short.mp3" data-start="17.2" data-duration="0.57" data-volume="0.35"></audio>
+      <audio id="sfxW2" src="assets/sfx/whoosh-short.mp3" data-start="18.2" data-duration="0.57" data-volume="0.35"></audio>
+      <audio id="sfxW3" src="assets/sfx/whoosh-short.mp3" data-start="46" data-duration="0.57" data-volume="0.35"></audio>
+      <audio id="sfxW4" src="assets/sfx/whoosh-short.mp3" data-start="47" data-duration="0.57" data-volume="0.35"></audio>
+      <audio id="sfxW5" src="assets/sfx/whoosh-short.mp3" data-start="57.2" data-duration="0.57" data-volume="0.35"></audio>
+      <audio id="sfxW6" src="assets/sfx/whoosh-short.mp3" data-start="58.2" data-duration="0.57" data-volume="0.35"></audio>
+      <!-- Pop on each bond formation -->
+      <audio id="sfxP1" src="assets/sfx/pop.mp3" data-start="20.4" data-duration="0.72" data-volume="0.35"></audio>
+      <audio id="sfxP2" src="assets/sfx/pop.mp3" data-start="49" data-duration="0.72" data-volume="0.4"></audio>
+      <audio id="sfxP3" src="assets/sfx/pop.mp3" data-start="60.2" data-duration="0.72" data-volume="0.35"></audio>
+    </div>
+
+    <script>
+      // ------------------------------------------------------------------
+      // Geometry helpers. Angles are maths-style degrees (counter-clockwise,
+      // y up); SVG rotate() values are clockwise.
+      // ------------------------------------------------------------------
+      const NS = "http://www.w3.org/2000/svg";
+      const INK = "#111111", RED = "#D62828", BLUE = "#1D4ED8", GREEN = "#22A447", YEL = "#FFD60A";
+      const FONT = "Inter, Helvetica, Arial, sans-serif";
+      const L = 100; // bond length
+
+      const rad = (d) => (d * Math.PI) / 180;
+      const P = (r, d) => [r * Math.cos(rad(d)), -r * Math.sin(rad(d))];
+      const add = (p, q) => [p[0] + q[0], p[1] + q[1]];
+      const sub = (p, q) => [p[0] - q[0], p[1] - q[1]];
+      const mul = (p, k) => [p[0] * k, p[1] * k];
+      const unit = (p) => {
+        const l = Math.hypot(p[0], p[1]) || 1;
+        return [p[0] / l, p[1] / l];
+      };
+      const rotSvg = (p, deg) => {
+        const c = Math.cos(rad(deg)), s = Math.sin(rad(deg));
+        return [p[0] * c - p[1] * s, p[0] * s + p[1] * c];
+      };
+      const f = (n) => (+n).toFixed(2);
+      const TR = (x, y, r = 0, s = 1) => `translate(${f(x)},${f(y)}) rotate(${f(r)}) scale(${f(s)})`;
+      const seg = (s) => ({ x1: f(s[0][0]), y1: f(s[0][1]), x2: f(s[1][0]), y2: f(s[1][1]) });
+
+      function E(tag, attrs = {}, parent = null) {
+        const e = document.createElementNS(NS, tag);
+        for (const k in attrs) e.setAttribute(k, attrs[k]);
+        if (parent) parent.appendChild(e);
+        return e;
+      }
+
+      const tl = gsap.timeline({ paused: true });
+      const stage = document.getElementById("stage");
+      const ui = document.getElementById("ui");
+      const world = E("g", { transform: TR(0, 0, 0, 1) }, stage);
+      const glowLayer = E("g", {}, world);
+      const molLayer = E("g", {}, world);
+      const arrowLayer = E("g", {}, world);
+      const tagLayer = E("g", {}, world);
+
+      function camTo(t, d, F, S, s) {
+        tl.to(world, { attr: { transform: TR(S[0] - s * F[0], S[1] - s * F[1], 0, s) }, duration: d, ease: "power2.inOut" }, t);
+      }
+      const show = (el, t, d = 0.5) => tl.to(el, { opacity: 1, duration: d, ease: "power1.out" }, t);
+      const hide = (el, t, d = 0.5, to = 0) => tl.to(el, { opacity: to, duration: d, ease: "power1.in" }, t);
+
+      // ------------------------------------------------------------------
+      // Molecule: atoms, bonds, lone pairs and charges in a local frame.
+      // Labels and charges sit in "upright" groups that counter-rotate so
+      // text stays level when the molecule turns.
+      // ------------------------------------------------------------------
+      class Mol {
+        constructor(color, pose) {
+          this.color = color;
+          this.pose = { s: 1, ...pose };
+          this.g = E("g", { transform: TR(this.pose.x, this.pose.y, this.pose.r, this.pose.s) }, molLayer);
+          this.glow = E("g", {}, this.g);
+          this.bl = E("g", {}, this.g);
+          this.al = E("g", {}, this.g);
+          this.atoms = {};
+          this.bonds = {};
+          this.uprights = [];
+          this.strokeEls = [];
+          this.fillEls = [];
+        }
+        upright(parent, off) {
+          const o = E("g", { transform: TR(off[0], off[1]) }, parent);
+          const i = E("g", { transform: TR(0, 0, -this.pose.r, 1) }, o);
+          this.uprights.push(i);
+          return i;
+        }
+        atom(n, pos, label = null, { show = true, color = null } = {}) {
+          const g = E("g", { transform: TR(pos[0], pos[1]) }, this.al);
+          const a = { n, pos: [...pos], g, label, lps: {}, lpRot: 0 };
+          a.lpG = E("g", { transform: "rotate(0)" }, g);
+          if (label) {
+            const u = this.upright(g, [0, 0]);
+            a.text = E("text", { x: 0, y: 0, "text-anchor": "middle", "dominant-baseline": "central", "font-size": 40, "font-weight": 500, "font-family": FONT, fill: color || this.color }, u);
+            a.text.textContent = label;
+            if (!color) this.fillEls.push(a.text);
+            if (!show) a.text.style.opacity = 0;
+          }
+          this.atoms[n] = a;
+          return a;
+        }
+        trim(a) {
+          return a.label ? (a.label === "H" ? 17 : 20) : 0;
+        }
+        ends(b) {
+          const pa = this.atoms[b.a].pos, pb = this.atoms[b.b].pos;
+          const d = unit(sub(pb, pa));
+          const ta = this.trim(this.atoms[b.a]), tb = this.trim(this.atoms[b.b]);
+          const p1 = add(pa, mul(d, ta)), p2 = sub(pb, mul(d, tb));
+          const nrm = [-d[1] * b.side, d[0] * b.side];
+          const q1 = add(add(p1, mul(d, ta ? 2 : 14)), mul(nrm, 11));
+          const q2 = add(sub(p2, mul(d, tb ? 2 : 14)), mul(nrm, 11));
+          return { main: [p1, p2], pi: [q1, q2] };
+        }
+        line(s, vis, stroke) {
+          const l = E("line", { ...seg(s), stroke: stroke || this.color, "stroke-width": 4, "stroke-linecap": "round" }, this.bl);
+          if (!stroke) this.strokeEls.push(l);
+          if (!vis) l.style.opacity = 0;
+          return l;
+        }
+        bond(n, a, b, o = {}) {
+          const bd = { n, a, b, order: o.order || 1, side: o.side || 1 };
+          const e = this.ends(bd);
+          const vis = o.show !== false;
+          bd.main = this.line(e.main, vis, o.stroke);
+          if (bd.order === 2) bd.pi = this.line(e.pi, o.showPi === undefined ? vis : o.showPi);
+          this.bonds[n] = bd;
+          return bd;
+        }
+        lp(n, key, deg, { show = true } = {}) {
+          const a = this.atoms[n];
+          const g = E("g", {}, a.lpG);
+          const c = P(24, deg), perp = P(5, deg + 90);
+          for (const s of [1, -1]) {
+            this.fillEls.push(E("circle", { cx: f(c[0] + perp[0] * s), cy: f(c[1] + perp[1] * s), r: 3.8, fill: this.color }, g));
+          }
+          if (!show) g.style.opacity = 0;
+          a.lps[key] = { g, deg };
+          return g;
+        }
+        charge(n, deg, r = 40, { show = false } = {}) {
+          const a = this.atoms[n];
+          const g = E("g", {}, this.upright(a.g, P(r, deg)));
+          this.strokeEls.push(E("circle", { cx: 0, cy: 0, r: 12, fill: "none", stroke: this.color, "stroke-width": 2.6 }, g));
+          this.strokeEls.push(E("line", { x1: -5.5, y1: 0, x2: 5.5, y2: 0, stroke: this.color, "stroke-width": 2.6, "stroke-linecap": "round" }, g));
+          if (!show) g.style.opacity = 0;
+          a.charge = g;
+          return g;
+        }
+        label(n, str, deg, r, { size = 30, color = null, weight = 600, italic = false } = {}) {
+          const a = this.atoms[n];
+          const w = E("g", { transform: "scale(1)" }, this.upright(a.g, P(r, deg)));
+          const t = E("text", { x: 0, y: 0, "text-anchor": "middle", "dominant-baseline": "central", "font-size": size, "font-weight": weight, "font-family": FONT, "font-style": italic ? "italic" : "normal", fill: color || this.color }, w);
+          t.textContent = str;
+          if (!color) this.fillEls.push(t);
+          w.style.opacity = 0;
+          return w;
+        }
+        // ---- timeline actions ----
+        poseTo(p, t, d, ease = "power2.inOut") {
+          const turn = p.r !== undefined && p.r !== this.pose.r;
+          this.pose = { ...this.pose, ...p };
+          tl.to(this.g, { attr: { transform: TR(this.pose.x, this.pose.y, this.pose.r, this.pose.s) }, duration: d, ease }, t);
+          if (turn) for (const u of this.uprights) tl.to(u, { attr: { transform: TR(0, 0, -this.pose.r, 1) }, duration: d, ease }, t);
+        }
+        // Bond forming: the line grows from atom `from` toward the other end.
+        grow(n, which, t, d, from = null) {
+          const b = this.bonds[n];
+          const s = this.ends(b)[which];
+          const line = b[which];
+          const start = from === b.b ? [s[1], s[1]] : [s[0], s[0]];
+          tl.set(line, { opacity: 1 }, t);
+          tl.fromTo(line, { attr: seg(start) }, { attr: seg(s), duration: d, ease: "power2.out", immediateRender: false }, t);
+        }
+        // Bond breaking: the line fades and retracts toward atom `to`.
+        retract(n, which, t, d, to) {
+          const b = this.bonds[n];
+          const s = this.ends(b)[which];
+          const line = b[which];
+          line.dead = true;
+          const end = to === b.a ? s[0] : s[1];
+          tl.to(line, { attr: seg([end, end]), opacity: 0, duration: d, ease: "power2.in" }, t);
+        }
+        move(n, pos, t, d, ease = "power2.inOut") {
+          const a = this.atoms[n];
+          a.pos = [...pos];
+          tl.to(a.g, { attr: { transform: TR(pos[0], pos[1]) }, duration: d, ease }, t);
+          for (const b of Object.values(this.bonds)) {
+            if (b.a !== n && b.b !== n) continue;
+            const e = this.ends(b);
+            if (!b.main.dead) tl.to(b.main, { attr: seg(e.main), duration: d, ease }, t);
+            if (b.pi && !b.pi.dead) tl.to(b.pi, { attr: seg(e.pi), duration: d, ease }, t);
+          }
+        }
+        rotateLps(n, deg, t, d) {
+          const a = this.atoms[n];
+          a.lpRot = deg;
+          tl.to(a.lpG, { attr: { transform: `rotate(${deg})` }, duration: d, ease: "power2.inOut" }, t);
+        }
+        recolor(c, t, d) {
+          this.color = c;
+          tl.to(this.strokeEls, { attr: { stroke: c }, duration: d }, t);
+          tl.to(this.fillEls, { attr: { fill: c }, duration: d }, t);
+        }
+        // ---- coordinates ----
+        toWorld(p) {
+          const q = rotSvg(mul(p, this.pose.s), this.pose.r);
+          return [q[0] + this.pose.x, q[1] + this.pose.y];
+        }
+        fromWorld(w) {
+          return mul(rotSvg([w[0] - this.pose.x, w[1] - this.pose.y], -this.pose.r), 1 / this.pose.s);
+        }
+        atomW(n) {
+          return this.toWorld(this.atoms[n].pos);
+        }
+        lpW(n, key) {
+          const a = this.atoms[n];
+          return this.toWorld(add(a.pos, rotSvg(P(24, a.lps[key].deg), a.lpRot)));
+        }
+        bondMidW(n, which = "main") {
+          const s = this.ends(this.bonds[n])[which];
+          return this.toWorld(mul(add(s[0], s[1]), 0.5));
+        }
+      }
+
+      // ------------------------------------------------------------------
+      // Curved electron-flow arrows (world coordinates), drawn tail → head.
+      // ------------------------------------------------------------------
+      function arrow(tail, target, { bend = 40, stop = 18 } = {}) {
+        const mid = mul(add(tail, target), 0.5);
+        const d = unit(sub(target, tail));
+        const ctrl = add(mid, mul([-d[1], d[0]], bend));
+        const tip = add(target, mul(unit(sub(ctrl, target)), stop));
+        const end = add(tip, mul(unit(sub(ctrl, tip)), 12));
+        const g = E("g", {}, arrowLayer);
+        g.style.opacity = 0;
+        const path = E("path", { d: `M${f(tail[0])},${f(tail[1])} Q${f(ctrl[0])},${f(ctrl[1])} ${f(end[0])},${f(end[1])}`, fill: "none", stroke: GREEN, "stroke-width": 4, "stroke-linecap": "round" }, g);
+        const len = path.getTotalLength();
+        path.style.strokeDasharray = `${len} ${len + 10}`;
+        path.style.strokeDashoffset = `${len}`;
+        const dir = unit(sub(tip, ctrl));
+        const nn = [-dir[1], dir[0]];
+        const base = sub(tip, mul(dir, 20));
+        const h = E("path", { d: `M${f(tip[0])},${f(tip[1])} L${f(base[0] + nn[0] * 9)},${f(base[1] + nn[1] * 9)} L${f(base[0] + dir[0] * 5)},${f(base[1] + dir[1] * 5)} L${f(base[0] - nn[0] * 9)},${f(base[1] - nn[1] * 9)} Z`, fill: GREEN }, g);
+        h.style.opacity = 0;
+        return { g, path, head: h };
+      }
+      function drawArrow(a, t, d = 0.8) {
+        tl.set(a.g, { opacity: 1 }, t);
+        tl.to(a.path, { strokeDashoffset: 0, duration: d, ease: "power1.inOut" }, t);
+        tl.to(a.head, { opacity: 1, duration: 0.12 }, t + d - 0.1);
+      }
+
+      function wtext(str, x, y, { size = 30, color = INK, weight = 500, parent = tagLayer, italic = false } = {}) {
+        const t = E("text", { x: f(x), y: f(y), "text-anchor": "middle", "dominant-baseline": "central", "font-size": size, "font-weight": weight, "font-family": FONT, "font-style": italic ? "italic" : "normal", fill: color }, parent);
+        t.textContent = str;
+        t.style.opacity = 0;
+        return t;
+      }
+      function pill(str, color, x, y, { fg = "#ffffff", size = 26 } = {}) {
+        const g = E("g", { transform: TR(x, y) }, tagLayer);
+        g.style.opacity = 0;
+        const w = str.length * size * 0.6 + 40;
+        E("rect", { x: f(-w / 2), y: -22, width: f(w), height: 44, rx: 22, fill: color }, g);
+        const t = E("text", { x: 0, y: 1, "text-anchor": "middle", "dominant-baseline": "central", "font-size": size, "font-weight": 600, "font-family": FONT, fill: fg }, g);
+        t.textContent = str;
+        return g;
+      }
+      function halo(parent, pos, r, color) {
+        const c = E("circle", { cx: f(pos[0]), cy: f(pos[1]), r, fill: color, filter: "url(#soft)" }, parent);
+        c.style.opacity = 0;
+        return c;
+      }
+      function pulse(el, t, peak = 0.8, rest = 0) {
+        tl.to(el, { opacity: peak, duration: 0.35, ease: "power1.out" }, t);
+        tl.to(el, { opacity: peak * 0.35, duration: 0.45, ease: "power1.inOut" }, t + 0.35);
+        tl.to(el, { opacity: peak, duration: 0.35, ease: "power1.inOut" }, t + 0.8);
+        tl.to(el, { opacity: rest, duration: 0.6, ease: "power1.in" }, t + 1.15);
+      }
+
+      // ------------------------------------------------------------------
+      // Molecules. Molecule N (propanal #2 → enolate) is built in the product
+      // frame with its α-carbon at the origin; scenes 1–4 show it turned 90°.
+      // ------------------------------------------------------------------
+      function buildN(m, enolateCopy) {
+        const z = enolateCopy;
+        m.atom("Ca", [0, 0]);
+        m.atom("Cm", P(L, 60));
+        const cc = P(L, 300);
+        m.atom("Cc", cc);
+        m.atom("O", add(cc, [L, 0]), "O", { show: z });
+        m.atom("Hc", add(cc, P(75, 240)), "H", { show: z });
+        m.bond("CmCa", "Cm", "Ca", { show: z });
+        m.bond("CaCc", "Ca", "Cc", { order: z ? 2 : 1, side: 1, show: z, showPi: false });
+        m.bond("CcO", "Cc", "O", { order: 2, side: -1, show: z });
+        m.bond("CcHc", "Cc", "Hc", { show: z });
+        m.lp("O", "a", 60, { show: z });
+        m.lp("O", "b", 300, { show: z });
+        m.lp("Ca", "c", 180, { show: z });
+        m.charge("Ca", 135, 40, { show: z });
+        if (z) {
+          m.lp("O", "n", 0, { show: false });
+          m.charge("O", 270, 44);
+        } else {
+          m.atom("Ha", P(75, 180), "H", { show: false });
+          m.bond("CaHa", "Ca", "Ha", { show: false });
+        }
+      }
+
+      const N = new Mol(INK, { x: 930, y: 600, r: -90 });
+      buildN(N, false);
+      const alphaS2 = N.label("Ca", "α", 0, 40, { size: 38, weight: 600 });
+      const ccGlow = halo(N.glow, N.atoms.Cc.pos, 34, "#9CA3AF");
+      const caGlow = halo(N.glow, [0, 0], 34, "#9CA3AF");
+
+      // Enolate resonance form (drawn on the right in scene 4).
+      const Z = new Mol(INK, { x: 640, y: 560, r: -90 });
+      buildN(Z, true);
+      Z.g.style.opacity = 0;
+
+      // Hydroxide (enters from the right in scene 3).
+      const OHpos = [1060, 685];
+      const Hx = new Mol(INK, { x: OHpos[0] + 760, y: OHpos[1], r: 0 });
+      Hx.atom("O", [0, 0], "O");
+      Hx.atom("H", P(75, 270), "H");
+      Hx.atom("H2", P(75, 170), "H", { show: false });
+      Hx.bond("OH", "O", "H");
+      Hx.bond("OH2", "O", "H2", { show: false });
+      Hx.lp("O", "x", 180);
+      Hx.lp("O", "y", 45);
+      Hx.lp("O", "z", 330);
+      Hx.charge("O", 115, 42, { show: true });
+      Hx.g.style.opacity = 0;
+
+      // Electrophile: propanal #1 in red, carbonyl carbon (future β-C) at origin.
+      const B0 = [860, 470];
+      const R = new Mol(RED, { x: B0[0] - 980, y: B0[1], r: 0 });
+      R.atom("C1", [0, 0]);
+      R.atom("C2", [-L, 0]);
+      R.atom("C3", add([-L, 0], P(L, 240)));
+      R.atom("O", P(L, 300), "O");
+      R.atom("H", P(75, 60), "H");
+      R.atom("nA", [L, 0]); // where the blue α-carbon will sit
+      R.atom("Hn", [0, 170], "H", { show: false, color: INK }); // H delivered by water
+      R.bond("C3C2", "C3", "C2");
+      R.bond("C2C1", "C2", "C1");
+      R.bond("C1O", "C1", "O", { order: 2, side: 1 });
+      R.bond("C1H", "C1", "H");
+      R.bond("CC", "nA", "C1", { show: false, stroke: "url(#ccGrad)" });
+      R.lp("O", "a", 240);
+      R.lp("O", "b", 0);
+      R.lp("O", "n", 300, { show: false });
+      R.charge("O", 30, 42);
+      R.g.style.opacity = 0;
+      const dPlus = R.label("C1", "δ+", 120, 36, { size: 28, weight: 600, italic: true });
+      const dMinus = R.label("O", "δ−", 180, 50, { size: 28, weight: 600, italic: true });
+      const betaLbl = R.label("C1", "β", 225, 40, { size: 34 });
+
+      // Water for scene 6, O at origin.
+      const W = new Mol(INK, { x: 860, y: 1110, r: 0 });
+      W.atom("O", [0, 0], "O");
+      W.atom("H1", [0, -70], "H");
+      W.atom("H2", P(70, 330), "H");
+      W.bond("OH1", "O", "H1");
+      W.bond("OH2", "O", "H2");
+      W.lp("O", "a", 200);
+      W.lp("O", "b", 255);
+      W.lp("O", "n", 90, { show: false });
+      W.charge("O", 140, 42);
+      W.g.style.opacity = 0;
+      const ohGlow = halo(W.glow, [20, 10], 70, "#94A3B8");
+
+      // ==================================================================
+      // Scene 1: Title (0–6 s)
+      // ==================================================================
+      tl.fromTo("#title", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.9, ease: "power2.out" }, 0.3);
+      tl.fromTo("#subtitle", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }, 1.1);
+      N.grow("CmCa", "main", 1.8, 0.45, "Cm");
+      N.grow("CaCc", "main", 2.3, 0.45, "Ca");
+      N.grow("CcO", "main", 2.8, 0.4, "Cc");
+      N.grow("CcO", "pi", 3.2, 0.4, "Cc");
+      show(N.atoms.O.text, 3.0, 0.4);
+      N.grow("CcHc", "main", 3.6, 0.4, "Cc");
+      show(N.atoms.Hc.text, 3.85, 0.4);
+      show(N.atoms.O.lps.a.g, 4.3, 0.4);
+      show(N.atoms.O.lps.b.g, 4.45, 0.4);
+      hide("#title", 5.4, 0.6);
+      hide("#subtitle", 5.4, 0.6);
+
+      // ==================================================================
+      // Scene 2: Identify the α-carbon (6–14 s)
+      // ==================================================================
+      camTo(6.0, 1.4, [962, 560], [960, 500], 1.6);
+      pulse(ccGlow, 7.0, 0.75);
+      N.grow("CaHa", "main", 8.4, 0.45, "Ca");
+      show(N.atoms.Ha.text, 8.7, 0.35);
+      show(alphaS2, 8.8, 0.4);
+      tl.to(alphaS2, { attr: { transform: "scale(1.45)" }, duration: 0.35, ease: "power1.out", yoyo: true, repeat: 3 }, 9.2);
+      pulse(caGlow, 9.2, 0.6);
+      tl.fromTo("#cap2", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 9.6);
+      hide("#cap2", 13.3, 0.5);
+
+      // ==================================================================
+      // Scene 3: Step 1, deprotonation (14–28 s)
+      // ==================================================================
+      tl.fromTo("#h3", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 14.0);
+      camTo(14.0, 1.0, [960, 610], [960, 540], 1.25);
+      tl.set(Hx.g, { opacity: 1 }, 15.0);
+      Hx.poseTo({ x: OHpos[0], y: OHpos[1] }, 15.0, 1.6, "power3.out");
+
+      const a1 = arrow(Hx.lpW("O", "x"), N.atomW("Ha"), { bend: -36, stop: 20 });
+      drawArrow(a1, 17.2);
+      const a2 = arrow(N.bondMidW("CaHa"), N.atomW("Ca"), { bend: -40, stop: 8 });
+      drawArrow(a2, 18.2);
+
+      // 0.5 s pause, then the bond changes the arrows describe.
+      const hTarget = Hx.toWorld(Hx.atoms.H2.pos);
+      N.retract("CaHa", "main", 19.5, 0.6, "Ca");
+      N.move("Ha", N.fromWorld(hTarget), 19.5, 0.8);
+      hide(Hx.atoms.O.lps.x.g, 19.5, 0.4);
+      Hx.grow("OH2", "main", 20.0, 0.6, "O");
+      tl.set(N.atoms.Ha.g, { opacity: 0 }, 20.3);
+      tl.set(Hx.atoms.H2.text, { opacity: 1 }, 20.3);
+      hide(Hx.atoms.O.charge, 20.0, 0.4);
+      show(N.atoms.Ca.lps.c.g, 19.7, 0.5);
+      show(N.atoms.Ca.charge, 20.0, 0.4);
+
+      hide(a1.g, 21.0);
+      hide(a2.g, 21.0);
+      Hx.poseTo({ x: OHpos[0] + 200, y: OHpos[1] + 70 }, 21.2, 1.8);
+      hide(Hx.g, 21.2, 1.8, 0.5);
+      const lblCarbanion = wtext("carbanion", 930, 740, { size: 30, color: "#4B5563" });
+      show(lblCarbanion, 23.0);
+      tl.fromTo("#eq3", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 23.4);
+      hide("#eq3", 27.3);
+      hide(lblCarbanion, 27.3);
+      hide(Hx.g, 27.3);
+      hide(alphaS2, 27.3);
+      hide("#h3", 27.6, 0.4);
+
+      // ==================================================================
+      // Scene 4: Resonance (28–38 s)
+      // ==================================================================
+      tl.fromTo("#h4", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 28.0);
+      camTo(28.0, 1.4, [960, 540], [960, 540], 1);
+      N.poseTo({ x: 640, y: 560 }, 28.0, 1.4);
+
+      const bracket = E("path", { d: "M520,380 H496 V700 H520 M1430,380 H1454 V700 H1430", fill: "none", stroke: INK, "stroke-width": 4, "stroke-linecap": "round", "stroke-linejoin": "round" }, tagLayer);
+      bracket.style.opacity = 0;
+      show(bracket, 29.4);
+
+      const r1 = arrow(N.lpW("Ca", "c"), N.bondMidW("CaCc"), { bend: 34, stop: 6 });
+      drawArrow(r1, 29.8);
+      const r2 = arrow(N.bondMidW("CcO", "pi"), N.atomW("O"), { bend: -34, stop: 22 });
+      drawArrow(r2, 30.8);
+
+      // The second resonance form is drawn from the same skeleton, then
+      // electrons are redistributed. Same molecule, not a new species.
+      tl.set(Z.g, { opacity: 1 }, 32.1);
+      Z.poseTo({ x: 1260, y: 560 }, 32.1, 1.6);
+      hide(Z.atoms.Ca.lps.c.g, 32.3, 0.5);
+      hide(Z.atoms.Ca.charge, 32.5, 0.4);
+      Z.grow("CaCc", "pi", 32.4, 0.6, "Ca");
+      Z.retract("CcO", "pi", 32.6, 0.6, "O");
+      show(Z.atoms.O.lps.n.g, 33.0, 0.4);
+      show(Z.atoms.O.charge, 33.1, 0.4);
+
+      const res = E("g", {}, tagLayer);
+      res.style.opacity = 0;
+      E("path", { d: "M890,540 H1030 M876,540 l16,-9 v18 z M1044,540 l-16,-9 v18 z", fill: INK, stroke: INK, "stroke-width": 4, "stroke-linejoin": "round" }, res);
+      show(res, 33.9);
+      tl.fromTo("#cap4", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 34.4);
+      N.recolor(BLUE, 35.6, 0.8);
+      Z.recolor(BLUE, 35.6, 0.8);
+      const nucTag4 = pill("Nucleophile", BLUE, 960, 742);
+      show(nucTag4, 36.2);
+      hide("#cap4", 37.5);
+
+      // ==================================================================
+      // Scene 5: Step 2, nucleophilic addition (38–55 s)
+      // ==================================================================
+      hide("#h4", 37.8, 0.4);
+      tl.fromTo("#h5", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 38.2);
+      for (const el of [Z.g, bracket, res, r1.g, r2.g, nucTag4]) hide(el, 38.0, 0.5);
+      N.poseTo({ x: B0[0] + L, y: B0[1], r: 0 }, 38.5, 1.9);
+      camTo(38.5, 1.9, [910, 530], [960, 520], 1.3);
+      tl.set(R.g, { opacity: 1 }, 39.6);
+      R.poseTo({ x: B0[0], y: B0[1] }, 39.6, 1.8, "power3.out");
+
+      const elecTag = pill("Electrophile", RED, 740, 352);
+      const nucTag5 = pill("Nucleophile", BLUE, 1075, 330);
+      show(elecTag, 41.6);
+      show(nucTag5, 41.9);
+      show(dPlus, 42.4);
+      show(dMinus, 42.6);
+
+      const aA = arrow(N.lpW("Ca", "c"), R.atomW("C1"), { bend: 44, stop: 9 });
+      drawArrow(aA, 46.0);
+      const aB = arrow(R.bondMidW("C1O", "pi"), R.atomW("O"), { bend: 34, stop: 22 });
+      drawArrow(aB, 47.0);
+
+      // Bond changes after the 0.5 s pause.
+      for (const el of [elecTag, nucTag5, dPlus, dMinus]) hide(el, 48.3, 0.4);
+      R.grow("CC", "main", 48.3, 0.8, "nA");
+      hide(N.atoms.Ca.lps.c.g, 48.3, 0.4);
+      hide(N.atoms.Ca.charge, 48.6, 0.4);
+      R.retract("C1O", "pi", 48.3, 0.7, "O");
+      show(R.atoms.O.lps.n.g, 48.8, 0.4);
+      show(R.atoms.O.charge, 49.0, 0.4);
+      // sp2 → sp3 at the attacked carbon
+      R.move("H", P(75, 90), 48.6, 1.0);
+      R.move("O", P(L, 270), 48.6, 1.0);
+      R.rotateLps("O", 30, 48.6, 1.0);
+
+      const glowCC = E("line", { x1: f(B0[0] + L), y1: f(B0[1]), x2: f(B0[0]), y2: f(B0[1]), stroke: YEL, "stroke-width": 26, "stroke-linecap": "round", filter: "url(#softLine)" }, glowLayer);
+      glowCC.style.opacity = 0;
+      pulse(glowCC, 49.0, 0.95, 0.45);
+      const ccTag = pill("New C–C bond", YEL, 910, 330, { fg: "#111111" });
+      const ccLead = E("line", { x1: 910, y1: 354, x2: 910, y2: 440, stroke: "#B8860B", "stroke-width": 2.5, "stroke-dasharray": "5 6" }, tagLayer);
+      ccLead.style.opacity = 0;
+      show(ccTag, 49.2);
+      show(ccLead, 49.2);
+
+      hide(aA.g, 50.6);
+      hide(aB.g, 50.6);
+      const alphaS5 = N.label("Ca", "α", 240, 40, { size: 34 });
+      show(betaLbl, 51.0);
+      show(alphaS5, 51.4);
+      tl.fromTo("#cap5", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 51.8);
+      hide("#cap5", 54.4);
+      hide(ccTag, 54.4);
+      hide(ccLead, 54.4);
+      hide(glowCC, 54.4, 0.6);
+      hide("#h5", 54.6, 0.4);
+
+      // ==================================================================
+      // Scene 6: Protonation (55–68 s)
+      // ==================================================================
+      tl.fromTo("#h6", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 55.0);
+      tl.set(W.g, { opacity: 1 }, 55.0);
+      W.poseTo({ x: 860, y: 710 }, 55.0, 1.6, "power3.out");
+
+      const p1 = arrow(R.lpW("O", "n"), W.atomW("H1"), { bend: -30, stop: 18 });
+      drawArrow(p1, 57.2);
+      const p2 = arrow(W.bondMidW("OH1"), W.atomW("O"), { bend: 30, stop: 22 });
+      drawArrow(p2, 58.2);
+
+      tl.set(W.atoms.H1.g, { opacity: 0 }, 59.5);
+      tl.set(R.atoms.Hn.text, { opacity: 1 }, 59.5);
+      W.retract("OH1", "main", 59.5, 0.6, "O");
+      R.bond("OHn", "O", "Hn", { show: false });
+      R.grow("OHn", "main", 59.5, 0.8, "O");
+      hide(R.atoms.O.lps.n.g, 59.5, 0.4);
+      hide(R.atoms.O.charge, 59.8, 0.4);
+      show(W.atoms.O.lps.n.g, 59.8, 0.4);
+      show(W.atoms.O.charge, 60.0, 0.4);
+
+      hide(p1.g, 61.0);
+      hide(p2.g, 61.0);
+      W.poseTo({ x: 1150, y: 730 }, 61.0, 1.4);
+      pulse(ohGlow, 61.9, 0.7);
+      tl.fromTo("#cap6", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 62.4);
+      tl.fromTo("#eq6", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, 63.6);
+      hide("#cap6", 67.2);
+      hide("#eq6", 67.2);
+      hide(W.g, 67.2);
+      hide("#h6", 67.4, 0.4);
+
+      // ==================================================================
+      // Scene 7: Product and summary (68–85 s)
+      // ==================================================================
+      tl.fromTo("#h7", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, 68.0);
+      hide(betaLbl, 68.0);
+      hide(alphaS5, 68.0);
+      const C7 = { F: [910, 515], S: [960, 455], s: 1.2 };
+      camTo(68.0, 1.6, C7.F, C7.S, C7.s);
+      const scr = (w) => [C7.S[0] + C7.s * (w[0] - C7.F[0]), C7.S[1] + C7.s * (w[1] - C7.F[1])];
+
+      tl.fromTo("#name7", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 69.8);
+      show("#sub7", 70.5, 0.6);
+
+      const cho = scr([B0[0] + 200, B0[1] + 100]);
+      const leadAld = E("path", { d: `M1408,${f(584)} L${f(cho[0] + 14)},${f(cho[1] + 8)}`, fill: "none", stroke: BLUE, "stroke-width": 2.5 }, ui);
+      leadAld.style.opacity = 0;
+      const ohS = scr([B0[0] + 6, B0[1] + 140]);
+      const leadOl = E("path", { d: `M712,${f(584)} L${f(ohS[0] - 30)},${f(ohS[1])}`, fill: "none", stroke: RED, "stroke-width": 2.5 }, ui);
+      leadOl.style.opacity = 0;
+      show("#lblAld", 72.4);
+      show(leadAld, 72.4);
+      show("#lblOl", 73.4);
+      show(leadOl, 73.4);
+      tl.fromTo("#aldol7", { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.6)" }, 75.6);
+
+      for (const [id, t] of [["#sum1", 77.0], ["#sum2", 78.8], ["#sum3", 80.6]]) {
+        tl.fromTo(id, { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.6, ease: "power2.out" }, t);
+      }
+      pulse(glowCC, 78.9, 0.9, 0.0);
+      tl.fromTo("#eq7", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }, 82.2);
+      tl.set({}, {}, 85);
+
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
