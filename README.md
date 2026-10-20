@@ -249,3 +249,19 @@ See `data/design_template.json` → `colors` section for complete palette.
 ---
 
 **Project Goal:** Pixel-perfect, data-driven calendar that matches the original Venkatrama print calendar with ZERO manual layout work.
+
+---
+
+## 🎬 Video Rendering (Remotion)
+
+[Remotion](https://github.com/remotion-dev/remotion) is installed for making videos from the calendar pages.
+
+```bash
+npm install                 # install dependencies
+npm run remotion:studio     # open the Remotion Studio preview
+npm run remotion:render     # render CalendarIntro to out/calendar-intro.mp4
+```
+
+- Entry point: `remotion/index.ts`, compositions in `remotion/Root.tsx`
+- `assets/` is the public dir, so files there load with `staticFile('name.png')`
+- Video frames are 924×1316 to match the calendar page size

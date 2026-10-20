@@ -22,3 +22,6 @@ build/
 # Temporary files
 *.tmp
 .cache/
+
+# Remotion render output
+out/
