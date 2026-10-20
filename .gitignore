@@ -25,3 +25,6 @@ build/
 
 # Remotion render output
 out/
+
+# HyperFrames generated files
+.hyperframes/

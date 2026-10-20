@@ -5,7 +5,12 @@
   "description": "Venkatrama Telugu Calendar renderer, with Remotion for video output",
   "scripts": {
     "remotion:studio": "remotion studio remotion/index.ts",
-    "remotion:render": "remotion render remotion/index.ts CalendarIntro out/calendar-intro.mp4"
+    "remotion:render": "remotion render remotion/index.ts CalendarIntro out/calendar-intro.mp4",
+    "hf:preview": "cd hyperframes && hyperframes preview",
+    "hf:check": "cd hyperframes && hyperframes check",
+    "hf:render": "cd hyperframes && hyperframes render -o ../out/hyperframes.mp4",
+    "hf:doctor": "hyperframes doctor",
+    "hf:browser": "hyperframes browser ensure"
   },
   "dependencies": {
     "@remotion/cli": "4.0.537",
@@ -15,6 +20,7 @@
   },
   "devDependencies": {
     "@types/react": "19.3.0",
+    "hyperframes": "0.8.181",
     "typescript": "7.0.2"
   }
 }

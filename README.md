@@ -265,3 +265,24 @@ npm run remotion:render     # render CalendarIntro to out/calendar-intro.mp4
 - Entry point: `remotion/index.ts`, compositions in `remotion/Root.tsx`
 - `assets/` is the public dir, so files there load with `staticFile('name.png')`
 - Video frames are 924×1316 to match the calendar page size
+
+---
+
+## 🎞️ HTML Video (HyperFrames)
+
+[HyperFrames](https://github.com/heygen-com/hyperframes) turns HTML/CSS + GSAP animations into MP4. Since the calendar renderer is already HTML, this is a natural fit. The project lives in `hyperframes/` (entry: `hyperframes/index.html`).
+
+Requirements: Node.js >= 22 and FFmpeg.
+
+```bash
+npm install                # installs the hyperframes CLI (dev dependency)
+npm run hf:browser         # one-time: download Chrome Headless Shell for rendering
+npm run hf:doctor          # check the environment
+npm run hf:preview         # live preview studio
+npm run hf:check           # lint the composition
+npm run hf:render          # render to out/hyperframes.mp4
+```
+
+Optional: install the HyperFrames agent skills for Claude Code with
+`claude plugin marketplace add heygen-com/hyperframes && claude plugin install hyperframes@hyperframes`
+(or `npx hyperframes skills update` for the standalone core skills).
